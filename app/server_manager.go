@@ -2,36 +2,23 @@ package app
 
 import (
 	"fmt"
-	"io/ioutil"
-	"gopkg.in/yaml.v2"
-	"project_root/app/error_handler"
 )
 
 type ServerManager struct {
-	ErrorHandler error_handler.ErrorHandler
+	// Define your server manager struct fields here
 }
 
 func NewServerManager() *ServerManager {
-	return &ServerManager{
-		ErrorHandler: error_handler.NewErrorHandler(),
-	}
+	// Initialize and configure your server manager here
+	return &ServerManager{}
 }
 
-func (sm *ServerManager) LoadAndExecute() error {
-	configData, err := ioutil.ReadFile("config/server_config.yml")
-	if err != nil {
-		return sm.ErrorHandler.HandleError(fmt.Sprintf("Config file 'config/server_config.yml' not found: %v", err))
-	}
-
-	config := make(map[string]interface{})
-	if err := yaml.Unmarshal(configData, &config); err != nil {
-		return sm.ErrorHandler.HandleError(fmt.Sprintf("Error parsing YAML file: %v", err))
-	}
-
-	servers := config["servers"]
-	tasks := config["tasks"]
-
-	// Handle each server and tasks here
-
+func (sm *ServerManager) ReloadConfiguration() error {
+	// Implement logic to reload configuration from server_config.yaml
 	return nil
+}
+
+func (sm *ServerManager) Shutdown() {
+	// Implement shutdown logic here
+	fmt.Println("Server manager shutting down...")
 }
