@@ -6,7 +6,6 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/hiroksarker/automatic_process/app"
 	"github.com/hiroksarker/automatic_process/pkg/sync"
 )
 
