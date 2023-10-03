@@ -10,9 +10,9 @@ tasks:
      vsftp_install: "true"
      vsftp_configure: "true"
    vsftpd_user:
-     - username: ftpuser1
-        password: password1
      - username: ftpuser2
+        password: password2
+     - username: ftpuser3
        password: password2
   vsftpd_config:
      config_file: /etc/vsftpd.conf
