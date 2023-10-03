@@ -1,15 +1,19 @@
-package error_handler
+package app
 
-import "log"
+import (
+	"fmt"
+)
 
-type ErrorHandler struct{}
+type ErrorHandler struct {
+	// Define your error handler struct fields here
+}
 
 func NewErrorHandler() *ErrorHandler {
+	// Initialize and configure your error handler here
 	return &ErrorHandler{}
 }
 
-func (eh *ErrorHandler) HandleError(errorMessage string) error {
-	log.Printf("Error: %s", errorMessage)
-	// You can log the error or take other appropriate actions
-	return fmt.Errorf("Error: %s", errorMessage)
+func (eh *ErrorHandler) HandleError(err error) {
+	// Implement error handling logic here
+	fmt.Printf("Error: %v\n", err)
 }
